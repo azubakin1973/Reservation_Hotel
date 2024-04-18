@@ -19,7 +19,7 @@ int main()
         hotel[i][0] = to_string(ncham);
         hotel[i][1] = ",...,";
         hotel[i][2] = "...,";
-        hotel[i][3] = "nao";
+        hotel[i][3] = "non";
         ncham++;
         }
 
