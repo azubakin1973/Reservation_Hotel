@@ -5,12 +5,13 @@
 #include <vector>
 #include <string>
 #include "includes/calculations.h"
+#include <algorithm>
 using namespace std;
 
 int main()
 {
     int choix;
-    vector<vector<string >> hotel(9, vector<string>(4));
+    vector< vector<string> > hotel(9, vector<string>(4));
 
     //initialization des chambres
 
