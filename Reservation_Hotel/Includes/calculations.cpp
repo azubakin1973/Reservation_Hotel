@@ -18,11 +18,11 @@ bool criarReserva(vector<vector<string>> & hotel) {
     cout << "Entrez le prenom: ";
     cin >> prenom;
 
-    // Procurar o número do quarto na matriz hotel e atualizar a reserva
+    // Procurar o nï¿½mero do quarto na matriz hotel e atualizar a reserva
 
     for (int i = 0; i < 9; i++) {
         if (hotel[i][0] == numeroChambre) {
-            if (hotel[i][3] == "non") { // Verifica se o quarto não está reservado
+            if (hotel[i][3] == "non") { // Verifica se o quarto nï¿½o estï¿½ reservado
                 hotel[i][1] = nom;
                 hotel[i][2] = prenom;
                 hotel[i][3] = "oui";
@@ -31,13 +31,13 @@ bool criarReserva(vector<vector<string>> & hotel) {
             }
             else {
                 cout << "Desole, la chambre " << numeroChambre << " est deja reservee.\n" << endl;
-                return false; // Quarto já está reservado
+                return false; // Quarto jï¿½ estï¿½ reservado
             }
 
             }
     }
     cout << "Desole, la chambre " << numeroChambre << " n'existe pas." << "\n" << "\n";
-    return false; // Quarto não encontrado
+    return false; // Quarto nï¿½o encontrado
 }
 
 
@@ -121,7 +121,7 @@ void modifierChambreReservation(vector<vector<string>> & hotel) {
         return;
     }
     
-    // Verificar se o novo quarto está vazio
+    // Verificar se o novo quarto estï¿½ vazio
     if (hotel[nouveau][3] == "oui") {
         cout << "\n**********Desole, la chambre " << nouveauChambre << " est deja occupee.*********" << endl;
         return;
@@ -130,12 +130,12 @@ void modifierChambreReservation(vector<vector<string>> & hotel) {
     // Transferir os dados da reserva do quarto antigo para o novo quarto
     hotel[nouveau][1] = hotel[ancien][1]; // Nome
     hotel[nouveau][2] = hotel[ancien][2]; // Sobrenome
-    hotel[nouveau][3] = "oui"; // Indicar que o novo quarto está ocupado
+    hotel[nouveau][3] = "oui"; // Indicar que o novo quarto estï¿½ ocupado
 
     // Limpar os dados do quarto antigo
     hotel[ancien][1] = "...";
     hotel[ancien][2] = "...";
-    hotel[ancien][3] = "non"; // Indicar que o quarto antigo está livre
+    hotel[ancien][3] = "non"; // Indicar que o quarto antigo estï¿½ livre
 
     cout << "La reservation pour la chambre " << ancienChambre << " a ete deplacee a la chambre " << nouveauChambre << "." << endl;
 }
@@ -184,7 +184,7 @@ void echangerReservations(vector<vector<string>> & hotel) {
     cout << "Entrez le numero de la deuxieme chambre : ";
     cin >> chambre2;
 
-    // Percorrer a matriz hotel e encontrar as posições das duas reservas
+    // Percorrer a matriz hotel e encontrar as posiï¿½ï¿½es das duas reservas
     int pos1 = -1, pos2 = -1;
     for (int i = 0; i < 9; i++) {
         if (hotel[i][0] == chambre1) {
@@ -210,17 +210,17 @@ void echangerReservations(vector<vector<string>> & hotel) {
         return;
     }
 
-    // Armazenar temporariamente as informações da primeira reserva
+    // Armazenar temporariamente as informaï¿½ï¿½es da primeira reserva
     string tempNom = hotel[pos1][1];
     string tempPrenom = hotel[pos1][2];
     string tempEtat = hotel[pos1][3];
 
-    // Atualizar a primeira reserva com as informações da segunda reserva
+    // Atualizar a primeira reserva com as informaï¿½ï¿½es da segunda reserva
     hotel[pos1][1] = hotel[pos2][1];
     hotel[pos1][2] = hotel[pos2][2];
     hotel[pos1][3] = hotel[pos2][3];
 
-    // Atualizar a segunda reserva com as informações armazenadas temporariamente
+    // Atualizar a segunda reserva com as informaï¿½ï¿½es armazenadas temporariamente
     hotel[pos2][1] = tempNom;
     hotel[pos2][2] = tempPrenom;
     hotel[pos2][3] = tempEtat;
